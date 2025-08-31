@@ -1,0 +1,45 @@
+html {
+    margin: auto;
+    width: 1000px;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+}
+.header-right-side {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; 
+}
+
+.header-text {
+    font-size: 50px;
+}
+
+.header-right-side > * {
+    font-size: large;
+    text-align: center;
+}
+
+.container {
+    border: 2px solid lightblue;
+    margin-top: 30px;
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.box {
+    box-sizing: border-box;
+    /* flex-grow: 1;
+    flex-shrink: 1; */
+    border: 1px solid rgb(231, 230, 230);
+    /* min-width: 100px;
+    min-height: 100px; */
+    /* width: 100px;
+    height: 100px; */
+}
