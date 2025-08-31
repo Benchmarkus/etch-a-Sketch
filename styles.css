@@ -24,6 +24,13 @@ html {
     text-align: center;
 }
 
+.color-picker {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
 .container {
     border: 2px solid lightblue;
     margin-top: 30px;
@@ -38,14 +45,7 @@ html {
     box-sizing: border-box;
     border: 1px solid rgb(231, 230, 230);
 }
-.box.red {
-    background-color: red;
-}
 
 .box:hover {
-    background-color: rgb(221, 221, 221);
-}
-
-.box.red:hover {
-    background-color: red;
+    filter: brightness(0.5)
 }
