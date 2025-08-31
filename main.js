@@ -2,9 +2,20 @@
 const buttonCreate = document.querySelector("#create-button");
 buttonCreate.addEventListener("click", createGrid);
 
+// global listener for mousedown
+let isMouseDown = false;
+document.addEventListener("mousedown", (e) => {
+    isMouseDown = true;
+    colorABox(e);
+});
+document.addEventListener("mouseup", () => {
+    isMouseDown = false;
+});
+
 // define container and create coloring event listener 
+// coloring works on mousedown AND mouseover
 const gridContainer = document.querySelector(".container");
-gridContainer.addEventListener("click", colorABox);
+gridContainer.addEventListener("mouseover", colorABox);
 
 function createGrid() {
     let size = document.querySelector("#input-size").value;
@@ -13,7 +24,7 @@ function createGrid() {
     if (size > 100) {
         alert("Valid size: 0 - 100");
         return;
-    }
+    } 
     
     // clear container
     gridContainer.innerHTML = "";
@@ -32,6 +43,8 @@ function createGrid() {
 }
 
 function colorABox(e) {
+    if (!isMouseDown) return;
+
     // pick user color
     let customColor = document.querySelector("#user-color").value;
     console.log("custom color:",customColor)
